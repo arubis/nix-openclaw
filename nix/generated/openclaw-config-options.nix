@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 819cec3c406a45d231057e37ace2f68cb6769255. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 4b5d4a4c660d05e4bd73f0e11123e68fd9664432. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -367,6 +367,10 @@ in
             default = null;
           };
         }; });
+          default = null;
+        };
+        directPolicy = lib.mkOption {
+          type = t.nullOr (t.oneOf [ (t.enum [ "allow" ]) (t.enum [ "block" ]) ]);
           default = null;
         };
         every = lib.mkOption {
@@ -1067,6 +1071,10 @@ in
             default = null;
           };
         }; });
+          default = null;
+        };
+        directPolicy = lib.mkOption {
+          type = t.nullOr (t.oneOf [ (t.enum [ "allow" ]) (t.enum [ "block" ]) ]);
           default = null;
         };
         every = lib.mkOption {
@@ -9915,6 +9923,10 @@ in
         default = null;
       };
     }; });
+      default = null;
+    };
+    parentForkMaxTokens = lib.mkOption {
+      type = t.nullOr (t.int);
       default = null;
     };
     reset = lib.mkOption {
