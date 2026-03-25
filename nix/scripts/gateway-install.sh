@@ -115,6 +115,17 @@ if [ -n "$hasown_src" ]; then
   fi
 fi
 
+# Remove dangling symlinks from nested package .bin directories left behind by
+# pnpm prune --prod. Top-level node_modules/.bin is left intact so real
+# missing-dep problems are still caught by check_no_broken_symlinks below.
+log_step "prune dangling nested bin symlinks" sh -c "
+  find '$out/lib/openclaw/node_modules' -mindepth 3 -name '.bin' -type d | while IFS= read -r bindir; do
+    find \"\$bindir\" -maxdepth 1 -type l | while IFS= read -r link; do
+      [ -e \"\$link\" ] || { printf '  removing dangling nested bin: %s\n' \"\$link\" >&2; rm -f \"\$link\"; }
+    done
+  done
+"
+
 log_step "validate node_modules symlinks" check_no_broken_symlinks "$out/lib/openclaw/node_modules"
 
 bash -e -c '. "$STDENV_SETUP"; makeWrapper "$NODE_BIN" "$out/bin/openclaw" --add-flags "$out/lib/openclaw/dist/index.js" --set-default OPENCLAW_NIX_MODE "1"'
