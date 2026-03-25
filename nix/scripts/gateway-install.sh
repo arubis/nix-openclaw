@@ -45,6 +45,23 @@ if [ -d extensions ]; then
   log_step "copy extensions" cp -r extensions "$out/lib/openclaw/"
 fi
 
+# v2026.3.23+: gateway looks for plugin manifests in dist/extensions/*/
+# but tsdown only outputs compiled JS there. The source manifests land in
+# $out/lib/openclaw/extensions/ via the copy-extensions step above; mirror
+# them into dist/extensions/ so the gateway config validator finds them.
+if [ -d "$out/lib/openclaw/extensions" ] && [ -d "$out/lib/openclaw/dist/extensions" ]; then
+  log_step "copy plugin manifests to dist/extensions" sh -c "
+    for src_dir in '$out/lib/openclaw/extensions'/*/; do
+      plugin=\$(basename \"\$src_dir\")
+      manifest=\"\$src_dir/openclaw.plugin.json\"
+      dst_dir='$out/lib/openclaw/dist/extensions/'\"\$plugin\"
+      if [ -f \"\$manifest\" ] && [ -d \"\$dst_dir\" ]; then
+        cp \"\$manifest\" \"\$dst_dir/openclaw.plugin.json\"
+      fi
+    done
+  "
+fi
+
 if [ -d docs/reference/templates ]; then
   mkdir -p "$out/lib/openclaw/docs/reference"
   log_step "copy reference templates" cp -r docs/reference/templates "$out/lib/openclaw/docs/reference/"
