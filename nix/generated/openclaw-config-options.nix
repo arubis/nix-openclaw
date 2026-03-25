@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev ccfeecb6887cd97937e33a71877ad512741e82b2. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 1b3a1246d00c35de419ca81ba301332f12a11ef2. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -2625,6 +2625,10 @@ in
     };
     profiles = lib.mkOption {
       type = t.nullOr (t.attrsOf (t.submodule { options = {
+      displayName = lib.mkOption {
+        type = t.nullOr (t.str);
+        default = null;
+      };
       email = lib.mkOption {
         type = t.nullOr (t.str);
         default = null;
@@ -3760,6 +3764,10 @@ in
               type = t.nullOr (t.bool);
               default = null;
             };
+            autoThreadName = lib.mkOption {
+              type = t.nullOr (t.enum [ "message" "generated" ]);
+              default = null;
+            };
             enabled = lib.mkOption {
               type = t.nullOr (t.bool);
               default = null;
@@ -4811,6 +4819,10 @@ in
           };
           autoThread = lib.mkOption {
             type = t.nullOr (t.bool);
+            default = null;
+          };
+          autoThreadName = lib.mkOption {
+            type = t.nullOr (t.enum [ "message" "generated" ]);
             default = null;
           };
           enabled = lib.mkOption {
