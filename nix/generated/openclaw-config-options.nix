@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev c5415a474bb085404c20f8b312e436997977b1ea. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 68c6abe32b1cdfa060966f8c12af0d8100f5df80. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -2921,6 +2921,10 @@ in
           type = t.nullOr (t.listOf (t.oneOf [ (t.str) (t.number) ]));
           default = null;
         };
+        allowPrivateNetwork = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
         blockStreaming = lib.mkOption {
           type = t.nullOr (t.bool);
           default = null;
@@ -3185,6 +3189,10 @@ in
       };
       allowFrom = lib.mkOption {
         type = t.nullOr (t.listOf (t.oneOf [ (t.str) (t.number) ]));
+        default = null;
+      };
+      allowPrivateNetwork = lib.mkOption {
+        type = t.nullOr (t.bool);
         default = null;
       };
       blockStreaming = lib.mkOption {
