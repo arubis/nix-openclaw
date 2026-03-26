@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev e0dfc776bba8ca9d235e5a8124344abac6aee931. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev a79c9d50f7917363137bb56ac56ec939059c7e1a. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -4184,190 +4184,12 @@ in
               type = t.nullOr (t.enum [ "off" "always" "inbound" "tagged" ]);
               default = null;
             };
-            edge = lib.mkOption {
-              type = t.nullOr (t.submodule { options = {
-              enabled = lib.mkOption {
-                type = t.nullOr (t.bool);
-                default = null;
-              };
-              lang = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              outputFormat = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              pitch = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              proxy = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              rate = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              saveSubtitles = lib.mkOption {
-                type = t.nullOr (t.bool);
-                default = null;
-              };
-              timeoutMs = lib.mkOption {
-                type = t.nullOr (t.int);
-                default = null;
-              };
-              voice = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              volume = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-            }; });
-              default = null;
-            };
-            elevenlabs = lib.mkOption {
-              type = t.nullOr (t.submodule { options = {
-              apiKey = lib.mkOption {
-                type = t.nullOr (t.oneOf [ (t.str) (t.oneOf [ (t.submodule { options = {
-                id = lib.mkOption {
-                  type = t.str;
-                };
-                provider = lib.mkOption {
-                  type = t.str;
-                };
-                source = lib.mkOption {
-                  type = t.enum [ "env" ];
-                };
-              }; }) (t.submodule { options = {
-                id = lib.mkOption {
-                  type = t.str;
-                };
-                provider = lib.mkOption {
-                  type = t.str;
-                };
-                source = lib.mkOption {
-                  type = t.enum [ "file" ];
-                };
-              }; }) (t.submodule { options = {
-                id = lib.mkOption {
-                  type = t.str;
-                };
-                provider = lib.mkOption {
-                  type = t.str;
-                };
-                source = lib.mkOption {
-                  type = t.enum [ "exec" ];
-                };
-              }; }) ]) ]);
-                default = null;
-              };
-              applyTextNormalization = lib.mkOption {
-                type = t.nullOr (t.enum [ "auto" "on" "off" ]);
-                default = null;
-              };
-              baseUrl = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              languageCode = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              modelId = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              seed = lib.mkOption {
-                type = t.nullOr (t.int);
-                default = null;
-              };
-              voiceId = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              voiceSettings = lib.mkOption {
-                type = t.nullOr (t.submodule { options = {
-                similarityBoost = lib.mkOption {
-                  type = t.nullOr (t.number);
-                  default = null;
-                };
-                speed = lib.mkOption {
-                  type = t.nullOr (t.number);
-                  default = null;
-                };
-                stability = lib.mkOption {
-                  type = t.nullOr (t.number);
-                  default = null;
-                };
-                style = lib.mkOption {
-                  type = t.nullOr (t.number);
-                  default = null;
-                };
-                useSpeakerBoost = lib.mkOption {
-                  type = t.nullOr (t.bool);
-                  default = null;
-                };
-              }; });
-                default = null;
-              };
-            }; });
-              default = null;
-            };
             enabled = lib.mkOption {
               type = t.nullOr (t.bool);
               default = null;
             };
             maxTextLength = lib.mkOption {
               type = t.nullOr (t.int);
-              default = null;
-            };
-            microsoft = lib.mkOption {
-              type = t.nullOr (t.submodule { options = {
-              enabled = lib.mkOption {
-                type = t.nullOr (t.bool);
-                default = null;
-              };
-              lang = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              outputFormat = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              pitch = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              proxy = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              rate = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              saveSubtitles = lib.mkOption {
-                type = t.nullOr (t.bool);
-                default = null;
-              };
-              timeoutMs = lib.mkOption {
-                type = t.nullOr (t.int);
-                default = null;
-              };
-              voice = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              volume = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-            }; });
               default = null;
             };
             mode = lib.mkOption {
@@ -4411,8 +4233,16 @@ in
             }; });
               default = null;
             };
-            openai = lib.mkOption {
-              type = t.nullOr (t.submodule { options = {
+            prefsPath = lib.mkOption {
+              type = t.nullOr (t.str);
+              default = null;
+            };
+            provider = lib.mkOption {
+              type = t.nullOr (t.str);
+              default = null;
+            };
+            providers = lib.mkOption {
+              type = t.nullOr (t.attrsOf (t.submodule { options = {
               apiKey = lib.mkOption {
                 type = t.nullOr (t.oneOf [ (t.str) (t.oneOf [ (t.submodule { options = {
                 id = lib.mkOption {
@@ -4447,35 +4277,7 @@ in
               }; }) ]) ]);
                 default = null;
               };
-              baseUrl = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              instructions = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              model = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-              speed = lib.mkOption {
-                type = t.nullOr (t.number);
-                default = null;
-              };
-              voice = lib.mkOption {
-                type = t.nullOr (t.str);
-                default = null;
-              };
-            }; });
-              default = null;
-            };
-            prefsPath = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            provider = lib.mkOption {
-              type = t.nullOr (t.str);
+            }; }));
               default = null;
             };
             summaryModel = lib.mkOption {
@@ -5241,190 +5043,12 @@ in
             type = t.nullOr (t.enum [ "off" "always" "inbound" "tagged" ]);
             default = null;
           };
-          edge = lib.mkOption {
-            type = t.nullOr (t.submodule { options = {
-            enabled = lib.mkOption {
-              type = t.nullOr (t.bool);
-              default = null;
-            };
-            lang = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            outputFormat = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            pitch = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            proxy = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            rate = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            saveSubtitles = lib.mkOption {
-              type = t.nullOr (t.bool);
-              default = null;
-            };
-            timeoutMs = lib.mkOption {
-              type = t.nullOr (t.int);
-              default = null;
-            };
-            voice = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            volume = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-          }; });
-            default = null;
-          };
-          elevenlabs = lib.mkOption {
-            type = t.nullOr (t.submodule { options = {
-            apiKey = lib.mkOption {
-              type = t.nullOr (t.oneOf [ (t.str) (t.oneOf [ (t.submodule { options = {
-              id = lib.mkOption {
-                type = t.str;
-              };
-              provider = lib.mkOption {
-                type = t.str;
-              };
-              source = lib.mkOption {
-                type = t.enum [ "env" ];
-              };
-            }; }) (t.submodule { options = {
-              id = lib.mkOption {
-                type = t.str;
-              };
-              provider = lib.mkOption {
-                type = t.str;
-              };
-              source = lib.mkOption {
-                type = t.enum [ "file" ];
-              };
-            }; }) (t.submodule { options = {
-              id = lib.mkOption {
-                type = t.str;
-              };
-              provider = lib.mkOption {
-                type = t.str;
-              };
-              source = lib.mkOption {
-                type = t.enum [ "exec" ];
-              };
-            }; }) ]) ]);
-              default = null;
-            };
-            applyTextNormalization = lib.mkOption {
-              type = t.nullOr (t.enum [ "auto" "on" "off" ]);
-              default = null;
-            };
-            baseUrl = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            languageCode = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            modelId = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            seed = lib.mkOption {
-              type = t.nullOr (t.int);
-              default = null;
-            };
-            voiceId = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            voiceSettings = lib.mkOption {
-              type = t.nullOr (t.submodule { options = {
-              similarityBoost = lib.mkOption {
-                type = t.nullOr (t.number);
-                default = null;
-              };
-              speed = lib.mkOption {
-                type = t.nullOr (t.number);
-                default = null;
-              };
-              stability = lib.mkOption {
-                type = t.nullOr (t.number);
-                default = null;
-              };
-              style = lib.mkOption {
-                type = t.nullOr (t.number);
-                default = null;
-              };
-              useSpeakerBoost = lib.mkOption {
-                type = t.nullOr (t.bool);
-                default = null;
-              };
-            }; });
-              default = null;
-            };
-          }; });
-            default = null;
-          };
           enabled = lib.mkOption {
             type = t.nullOr (t.bool);
             default = null;
           };
           maxTextLength = lib.mkOption {
             type = t.nullOr (t.int);
-            default = null;
-          };
-          microsoft = lib.mkOption {
-            type = t.nullOr (t.submodule { options = {
-            enabled = lib.mkOption {
-              type = t.nullOr (t.bool);
-              default = null;
-            };
-            lang = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            outputFormat = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            pitch = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            proxy = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            rate = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            saveSubtitles = lib.mkOption {
-              type = t.nullOr (t.bool);
-              default = null;
-            };
-            timeoutMs = lib.mkOption {
-              type = t.nullOr (t.int);
-              default = null;
-            };
-            voice = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            volume = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-          }; });
             default = null;
           };
           mode = lib.mkOption {
@@ -5468,8 +5092,16 @@ in
           }; });
             default = null;
           };
-          openai = lib.mkOption {
-            type = t.nullOr (t.submodule { options = {
+          prefsPath = lib.mkOption {
+            type = t.nullOr (t.str);
+            default = null;
+          };
+          provider = lib.mkOption {
+            type = t.nullOr (t.str);
+            default = null;
+          };
+          providers = lib.mkOption {
+            type = t.nullOr (t.attrsOf (t.submodule { options = {
             apiKey = lib.mkOption {
               type = t.nullOr (t.oneOf [ (t.str) (t.oneOf [ (t.submodule { options = {
               id = lib.mkOption {
@@ -5504,35 +5136,7 @@ in
             }; }) ]) ]);
               default = null;
             };
-            baseUrl = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            instructions = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            model = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-            speed = lib.mkOption {
-              type = t.nullOr (t.number);
-              default = null;
-            };
-            voice = lib.mkOption {
-              type = t.nullOr (t.str);
-              default = null;
-            };
-          }; });
-            default = null;
-          };
-          prefsPath = lib.mkOption {
-            type = t.nullOr (t.str);
-            default = null;
-          };
-          provider = lib.mkOption {
-            type = t.nullOr (t.str);
+          }; }));
             default = null;
           };
           summaryModel = lib.mkOption {
@@ -12514,190 +12118,12 @@ in
         type = t.nullOr (t.enum [ "off" "always" "inbound" "tagged" ]);
         default = null;
       };
-      edge = lib.mkOption {
-        type = t.nullOr (t.submodule { options = {
-        enabled = lib.mkOption {
-          type = t.nullOr (t.bool);
-          default = null;
-        };
-        lang = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        outputFormat = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        pitch = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        proxy = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        rate = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        saveSubtitles = lib.mkOption {
-          type = t.nullOr (t.bool);
-          default = null;
-        };
-        timeoutMs = lib.mkOption {
-          type = t.nullOr (t.int);
-          default = null;
-        };
-        voice = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        volume = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-      }; });
-        default = null;
-      };
-      elevenlabs = lib.mkOption {
-        type = t.nullOr (t.submodule { options = {
-        apiKey = lib.mkOption {
-          type = t.nullOr (t.oneOf [ (t.str) (t.oneOf [ (t.submodule { options = {
-          id = lib.mkOption {
-            type = t.str;
-          };
-          provider = lib.mkOption {
-            type = t.str;
-          };
-          source = lib.mkOption {
-            type = t.enum [ "env" ];
-          };
-        }; }) (t.submodule { options = {
-          id = lib.mkOption {
-            type = t.str;
-          };
-          provider = lib.mkOption {
-            type = t.str;
-          };
-          source = lib.mkOption {
-            type = t.enum [ "file" ];
-          };
-        }; }) (t.submodule { options = {
-          id = lib.mkOption {
-            type = t.str;
-          };
-          provider = lib.mkOption {
-            type = t.str;
-          };
-          source = lib.mkOption {
-            type = t.enum [ "exec" ];
-          };
-        }; }) ]) ]);
-          default = null;
-        };
-        applyTextNormalization = lib.mkOption {
-          type = t.nullOr (t.enum [ "auto" "on" "off" ]);
-          default = null;
-        };
-        baseUrl = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        languageCode = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        modelId = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        seed = lib.mkOption {
-          type = t.nullOr (t.int);
-          default = null;
-        };
-        voiceId = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        voiceSettings = lib.mkOption {
-          type = t.nullOr (t.submodule { options = {
-          similarityBoost = lib.mkOption {
-            type = t.nullOr (t.number);
-            default = null;
-          };
-          speed = lib.mkOption {
-            type = t.nullOr (t.number);
-            default = null;
-          };
-          stability = lib.mkOption {
-            type = t.nullOr (t.number);
-            default = null;
-          };
-          style = lib.mkOption {
-            type = t.nullOr (t.number);
-            default = null;
-          };
-          useSpeakerBoost = lib.mkOption {
-            type = t.nullOr (t.bool);
-            default = null;
-          };
-        }; });
-          default = null;
-        };
-      }; });
-        default = null;
-      };
       enabled = lib.mkOption {
         type = t.nullOr (t.bool);
         default = null;
       };
       maxTextLength = lib.mkOption {
         type = t.nullOr (t.int);
-        default = null;
-      };
-      microsoft = lib.mkOption {
-        type = t.nullOr (t.submodule { options = {
-        enabled = lib.mkOption {
-          type = t.nullOr (t.bool);
-          default = null;
-        };
-        lang = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        outputFormat = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        pitch = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        proxy = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        rate = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        saveSubtitles = lib.mkOption {
-          type = t.nullOr (t.bool);
-          default = null;
-        };
-        timeoutMs = lib.mkOption {
-          type = t.nullOr (t.int);
-          default = null;
-        };
-        voice = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        volume = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-      }; });
         default = null;
       };
       mode = lib.mkOption {
@@ -12741,8 +12167,16 @@ in
       }; });
         default = null;
       };
-      openai = lib.mkOption {
-        type = t.nullOr (t.submodule { options = {
+      prefsPath = lib.mkOption {
+        type = t.nullOr (t.str);
+        default = null;
+      };
+      provider = lib.mkOption {
+        type = t.nullOr (t.str);
+        default = null;
+      };
+      providers = lib.mkOption {
+        type = t.nullOr (t.attrsOf (t.submodule { options = {
         apiKey = lib.mkOption {
           type = t.nullOr (t.oneOf [ (t.str) (t.oneOf [ (t.submodule { options = {
           id = lib.mkOption {
@@ -12777,35 +12211,7 @@ in
         }; }) ]) ]);
           default = null;
         };
-        baseUrl = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        instructions = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        model = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-        speed = lib.mkOption {
-          type = t.nullOr (t.number);
-          default = null;
-        };
-        voice = lib.mkOption {
-          type = t.nullOr (t.str);
-          default = null;
-        };
-      }; });
-        default = null;
-      };
-      prefsPath = lib.mkOption {
-        type = t.nullOr (t.str);
-        default = null;
-      };
-      provider = lib.mkOption {
-        type = t.nullOr (t.str);
+      }; }));
         default = null;
       };
       summaryModel = lib.mkOption {
