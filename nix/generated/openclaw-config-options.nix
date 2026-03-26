@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 764394c78b6c22c5b53c3cd132d27ff36340bf45. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 208ff682983ba6660c24193b684e15bcea16e29a. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -7242,12 +7242,28 @@ in
         type = t.nullOr (t.bool);
         default = null;
       };
+      feedbackEnabled = lib.mkOption {
+        type = t.nullOr (t.bool);
+        default = null;
+      };
+      feedbackReflection = lib.mkOption {
+        type = t.nullOr (t.bool);
+        default = null;
+      };
+      feedbackReflectionCooldownMs = lib.mkOption {
+        type = t.nullOr (t.int);
+        default = null;
+      };
       groupAllowFrom = lib.mkOption {
         type = t.nullOr (t.listOf (t.str));
         default = null;
       };
       groupPolicy = lib.mkOption {
         type = t.nullOr (t.enum [ "open" "disabled" "allowlist" ]);
+        default = null;
+      };
+      groupWelcomeCard = lib.mkOption {
+        type = t.nullOr (t.bool);
         default = null;
       };
       healthMonitor = lib.mkOption {
@@ -7299,6 +7315,10 @@ in
       };
       mediaMaxMb = lib.mkOption {
         type = t.nullOr (t.number);
+        default = null;
+      };
+      promptStarters = lib.mkOption {
+        type = t.nullOr (t.listOf (t.str));
         default = null;
       };
       replyStyle = lib.mkOption {
@@ -7430,6 +7450,10 @@ in
           default = null;
         };
       }; });
+        default = null;
+      };
+      welcomeCard = lib.mkOption {
+        type = t.nullOr (t.bool);
         default = null;
       };
     }; });
@@ -15058,6 +15082,10 @@ in
           default = null;
         };
         maxRedirects = lib.mkOption {
+          type = t.nullOr (t.int);
+          default = null;
+        };
+        maxResponseBytes = lib.mkOption {
           type = t.nullOr (t.int);
           default = null;
         };
