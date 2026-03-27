@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev a79c9d50f7917363137bb56ac56ec939059c7e1a. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev dbf78de7c680405245cadee06a8ddb9e787616aa. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -664,7 +664,7 @@ in
           default = null;
         };
         fallback = lib.mkOption {
-          type = t.nullOr (t.oneOf [ (t.enum [ "openai" ]) (t.enum [ "gemini" ]) (t.enum [ "local" ]) (t.enum [ "voyage" ]) (t.enum [ "mistral" ]) (t.enum [ "ollama" ]) (t.enum [ "none" ]) ]);
+          type = t.nullOr (t.str);
           default = null;
         };
         local = lib.mkOption {
@@ -706,7 +706,7 @@ in
           default = null;
         };
         provider = lib.mkOption {
-          type = t.nullOr (t.oneOf [ (t.enum [ "openai" ]) (t.enum [ "local" ]) (t.enum [ "gemini" ]) (t.enum [ "voyage" ]) (t.enum [ "mistral" ]) (t.enum [ "ollama" ]) ]);
+          type = t.nullOr (t.str);
           default = null;
         };
         query = lib.mkOption {
@@ -1598,7 +1598,7 @@ in
           default = null;
         };
         fallback = lib.mkOption {
-          type = t.nullOr (t.oneOf [ (t.enum [ "openai" ]) (t.enum [ "gemini" ]) (t.enum [ "local" ]) (t.enum [ "voyage" ]) (t.enum [ "mistral" ]) (t.enum [ "ollama" ]) (t.enum [ "none" ]) ]);
+          type = t.nullOr (t.str);
           default = null;
         };
         local = lib.mkOption {
@@ -1640,7 +1640,7 @@ in
           default = null;
         };
         provider = lib.mkOption {
-          type = t.nullOr (t.oneOf [ (t.enum [ "openai" ]) (t.enum [ "local" ]) (t.enum [ "gemini" ]) (t.enum [ "voyage" ]) (t.enum [ "mistral" ]) (t.enum [ "ollama" ]) ]);
+          type = t.nullOr (t.str);
           default = null;
         };
         query = lib.mkOption {
