@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 206c29514c388fc962d2ec053c7cdd92fa087255. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev cd9254911985b6e1b9e4d028e91fd4c76459fd34. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -2535,6 +2535,46 @@ in
   approvals = lib.mkOption {
     type = t.nullOr (t.submodule { options = {
     exec = lib.mkOption {
+      type = t.nullOr (t.submodule { options = {
+      agentFilter = lib.mkOption {
+        type = t.nullOr (t.listOf (t.str));
+        default = null;
+      };
+      enabled = lib.mkOption {
+        type = t.nullOr (t.bool);
+        default = null;
+      };
+      mode = lib.mkOption {
+        type = t.nullOr (t.oneOf [ (t.enum [ "session" ]) (t.enum [ "targets" ]) (t.enum [ "both" ]) ]);
+        default = null;
+      };
+      sessionFilter = lib.mkOption {
+        type = t.nullOr (t.listOf (t.str));
+        default = null;
+      };
+      targets = lib.mkOption {
+        type = t.nullOr (t.listOf (t.submodule { options = {
+        accountId = lib.mkOption {
+          type = t.nullOr (t.str);
+          default = null;
+        };
+        channel = lib.mkOption {
+          type = t.str;
+        };
+        threadId = lib.mkOption {
+          type = t.nullOr (t.oneOf [ (t.str) (t.number) ]);
+          default = null;
+        };
+        to = lib.mkOption {
+          type = t.str;
+        };
+      }; }));
+        default = null;
+      };
+    }; });
+      default = null;
+    };
+    plugin = lib.mkOption {
       type = t.nullOr (t.submodule { options = {
       agentFilter = lib.mkOption {
         type = t.nullOr (t.listOf (t.str));
