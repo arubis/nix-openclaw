@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev ab2ef7bbfc5c93e2fb7904efb51d10d9cc2fa5a7. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 45ecf5e2e94ad1b8d40c6c750b7fe61e08ff21b9. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -7427,6 +7427,69 @@ in
           default = null;
         };
         provider = lib.mkOption {
+          type = t.nullOr (t.str);
+          default = null;
+        };
+        timeoutSeconds = lib.mkOption {
+          type = t.nullOr (t.int);
+          default = null;
+        };
+      }; });
+        default = null;
+      };
+      x_search = lib.mkOption {
+        type = t.nullOr (t.submodule { options = {
+        apiKey = lib.mkOption {
+          type = t.nullOr (t.oneOf [ (t.str) (t.oneOf [ (t.submodule { options = {
+          id = lib.mkOption {
+            type = t.str;
+          };
+          provider = lib.mkOption {
+            type = t.str;
+          };
+          source = lib.mkOption {
+            type = t.enum [ "env" ];
+          };
+        }; }) (t.submodule { options = {
+          id = lib.mkOption {
+            type = t.str;
+          };
+          provider = lib.mkOption {
+            type = t.str;
+          };
+          source = lib.mkOption {
+            type = t.enum [ "file" ];
+          };
+        }; }) (t.submodule { options = {
+          id = lib.mkOption {
+            type = t.str;
+          };
+          provider = lib.mkOption {
+            type = t.str;
+          };
+          source = lib.mkOption {
+            type = t.enum [ "exec" ];
+          };
+        }; }) ]) ]);
+          default = null;
+        };
+        cacheTtlMinutes = lib.mkOption {
+          type = t.nullOr (t.number);
+          default = null;
+        };
+        enabled = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
+        inlineCitations = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
+        maxTurns = lib.mkOption {
+          type = t.nullOr (t.int);
+          default = null;
+        };
+        model = lib.mkOption {
           type = t.nullOr (t.str);
           default = null;
         };
