@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 19e8e7190ba5bce1fd59520ec774d28423e23841. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev df204b1d8f824fd65f009ccf0405da91533bfce3. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -5003,6 +5003,10 @@ in
           };
           toolSchemaProfile = lib.mkOption {
             type = t.nullOr (t.str);
+            default = null;
+          };
+          unsupportedToolSchemaKeywords = lib.mkOption {
+            type = t.nullOr (t.listOf (t.str));
             default = null;
           };
         }; });
