@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 95acd74d7c682760d07d439e2b8e65bbd8df280c. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 19e8e7190ba5bce1fd59520ec774d28423e23841. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -4998,11 +4998,11 @@ in
             default = null;
           };
           toolCallArgumentsEncoding = lib.mkOption {
-            type = t.nullOr (t.enum [ "html-entities" ]);
+            type = t.nullOr (t.str);
             default = null;
           };
           toolSchemaProfile = lib.mkOption {
-            type = t.nullOr (t.enum [ "xai" ]);
+            type = t.nullOr (t.str);
             default = null;
           };
         }; });
