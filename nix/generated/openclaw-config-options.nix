@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 8a6d1b9f1e8581b32a620a71ae0c0a734ae51a28. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev ddd2cbf03aaf516a2f6479004545ecc29fe7ba02. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -2396,7 +2396,7 @@ in
             default = null;
           };
           host = lib.mkOption {
-            type = t.nullOr (t.enum [ "sandbox" "gateway" "node" ]);
+            type = t.nullOr (t.enum [ "auto" "sandbox" "gateway" "node" ]);
             default = null;
           };
           node = lib.mkOption {
@@ -4293,6 +4293,10 @@ in
         type = t.nullOr (t.attrsOf (t.oneOf [ (t.str) (t.number) (t.bool) ]));
         default = null;
       };
+      headers = lib.mkOption {
+        type = t.nullOr (t.attrsOf (t.oneOf [ (t.str) (t.number) (t.bool) ]));
+        default = null;
+      };
       url = lib.mkOption {
         type = t.nullOr (t.str);
         default = null;
@@ -5964,7 +5968,7 @@ in
         default = null;
       };
       host = lib.mkOption {
-        type = t.nullOr (t.enum [ "sandbox" "gateway" "node" ]);
+        type = t.nullOr (t.enum [ "auto" "sandbox" "gateway" "node" ]);
         default = null;
       };
       node = lib.mkOption {
