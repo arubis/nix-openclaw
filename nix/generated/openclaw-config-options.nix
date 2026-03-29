@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev f8547fcae4c05147a6648ed4765dcd1a2026bc72. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 64da91659037a61124dbb549c2000c75efc404da. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -849,6 +849,15 @@ in
           type = t.nullOr (t.submodule { options = {
           driver = lib.mkOption {
             type = t.nullOr (t.enum [ "sqlite" ]);
+            default = null;
+          };
+          fts = lib.mkOption {
+            type = t.nullOr (t.submodule { options = {
+            tokenizer = lib.mkOption {
+              type = t.nullOr (t.oneOf [ (t.enum [ "unicode61" ]) (t.enum [ "trigram" ]) ]);
+              default = null;
+            };
+          }; });
             default = null;
           };
           path = lib.mkOption {
@@ -1783,6 +1792,15 @@ in
           type = t.nullOr (t.submodule { options = {
           driver = lib.mkOption {
             type = t.nullOr (t.enum [ "sqlite" ]);
+            default = null;
+          };
+          fts = lib.mkOption {
+            type = t.nullOr (t.submodule { options = {
+            tokenizer = lib.mkOption {
+              type = t.nullOr (t.oneOf [ (t.enum [ "unicode61" ]) (t.enum [ "trigram" ]) ]);
+              default = null;
+            };
+          }; });
             default = null;
           };
           path = lib.mkOption {
@@ -4122,7 +4140,7 @@ in
         default = null;
       };
       channel = lib.mkOption {
-        type = t.nullOr (t.oneOf [ (t.enum [ "last" ]) (t.enum [ "whatsapp" ]) (t.enum [ "telegram" ]) (t.enum [ "discord" ]) (t.enum [ "irc" ]) (t.enum [ "slack" ]) (t.enum [ "signal" ]) (t.enum [ "imessage" ]) (t.enum [ "msteams" ]) ]);
+        type = t.nullOr (t.str);
         default = null;
       };
       deliver = lib.mkOption {
