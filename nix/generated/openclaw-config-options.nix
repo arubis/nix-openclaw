@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 1421fced04132232a02f17df82baad72b7c79204. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev fca8880968b8ea69aa1f4e0c35d064dd540d9575. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -4450,6 +4450,10 @@ in
       };
       searchMode = lib.mkOption {
         type = t.nullOr (t.oneOf [ (t.enum [ "query" ]) (t.enum [ "search" ]) (t.enum [ "vsearch" ]) ]);
+        default = null;
+      };
+      searchTool = lib.mkOption {
+        type = t.nullOr (t.str);
         default = null;
       };
       sessions = lib.mkOption {
