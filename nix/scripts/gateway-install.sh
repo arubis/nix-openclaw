@@ -53,10 +53,15 @@ if [ -d "$out/lib/openclaw/extensions" ] && [ -d "$out/lib/openclaw/dist/extensi
   log_step "copy plugin manifests to dist/extensions" sh -c "
     for src_dir in '$out/lib/openclaw/extensions'/*/; do
       plugin=\$(basename \"\$src_dir\")
-      manifest=\"\$src_dir/openclaw.plugin.json\"
       dst_dir='$out/lib/openclaw/dist/extensions/'\"\$plugin\"
-      if [ -f \"\$manifest\" ] && [ -d \"\$dst_dir\" ]; then
+      [ -d \"\$dst_dir\" ] || continue
+      manifest=\"\$src_dir/openclaw.plugin.json\"
+      if [ -f \"\$manifest\" ]; then
         cp \"\$manifest\" \"\$dst_dir/openclaw.plugin.json\"
+      fi
+      pkg_json=\"\$src_dir/package.json\"
+      if [ -f \"\$pkg_json\" ]; then
+        cp \"\$pkg_json\" \"\$dst_dir/package.json\"
       fi
     done
   "
