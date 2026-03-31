@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 913e7d5ebac7af6924f38bb7200cd73c2e81fc48. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev f85aba43a9cf05a6ebded2bfbad1eca012e977ad. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -2732,6 +2732,14 @@ in
       };
       failureWindowHours = lib.mkOption {
         type = t.nullOr (t.number);
+        default = null;
+      };
+      overloadedBackoffMs = lib.mkOption {
+        type = t.nullOr (t.int);
+        default = null;
+      };
+      overloadedProfileRotations = lib.mkOption {
+        type = t.nullOr (t.int);
         default = null;
       };
     }; });
