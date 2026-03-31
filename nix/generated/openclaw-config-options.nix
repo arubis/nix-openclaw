@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 4e67e7c02cd84f7eab9ee929cd3e7a4eff82fae4. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev e95f786aa29206b626ef816eb2c32339dc72c84a. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -717,6 +717,27 @@ in
         };
         provider = lib.mkOption {
           type = t.nullOr (t.str);
+          default = null;
+        };
+        qmd = lib.mkOption {
+          type = t.nullOr (t.submodule { options = {
+          extraCollections = lib.mkOption {
+            type = t.nullOr (t.listOf (t.submodule { options = {
+            name = lib.mkOption {
+              type = t.nullOr (t.str);
+              default = null;
+            };
+            path = lib.mkOption {
+              type = t.str;
+            };
+            pattern = lib.mkOption {
+              type = t.nullOr (t.str);
+              default = null;
+            };
+          }; }));
+            default = null;
+          };
+        }; });
           default = null;
         };
         query = lib.mkOption {
@@ -1664,6 +1685,27 @@ in
         };
         provider = lib.mkOption {
           type = t.nullOr (t.str);
+          default = null;
+        };
+        qmd = lib.mkOption {
+          type = t.nullOr (t.submodule { options = {
+          extraCollections = lib.mkOption {
+            type = t.nullOr (t.listOf (t.submodule { options = {
+            name = lib.mkOption {
+              type = t.nullOr (t.str);
+              default = null;
+            };
+            path = lib.mkOption {
+              type = t.str;
+            };
+            pattern = lib.mkOption {
+              type = t.nullOr (t.str);
+              default = null;
+            };
+          }; }));
+            default = null;
+          };
+        }; });
           default = null;
         };
         query = lib.mkOption {
