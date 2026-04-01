@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 1f97f907b2073d7951f4e9a9ffda13676277d52d. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 098125e9982b712e129c4896891cc2e48ef2485a. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -984,6 +984,10 @@ in
           default = null;
         };
       }; }));
+        default = null;
+      };
+      params = lib.mkOption {
+        type = t.nullOr (t.attrsOf (t.anything));
         default = null;
       };
       pdfMaxBytesMb = lib.mkOption {
