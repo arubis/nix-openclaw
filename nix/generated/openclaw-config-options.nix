@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 5b73108e581a921a63b914b3cb0dbb0265c5f935. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 90eb5b073fd2d7d8e94b19708e3baceeb8811ca8. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -346,6 +346,10 @@ in
         };
         model = lib.mkOption {
           type = t.nullOr (t.str);
+          default = null;
+        };
+        notifyUser = lib.mkOption {
+          type = t.nullOr (t.bool);
           default = null;
         };
         postCompactionSections = lib.mkOption {
