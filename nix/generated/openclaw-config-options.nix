@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 0e3cc129002612c11f49e86c40eca7582999bee2. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 0a76780f57511151c38e3365cd43729e3d2130d6. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -7293,40 +7293,6 @@ in
       };
       x_search = lib.mkOption {
         type = t.nullOr (t.submodule { options = {
-        apiKey = lib.mkOption {
-          type = t.nullOr (t.oneOf [ (t.str) (t.oneOf [ (t.submodule { options = {
-          id = lib.mkOption {
-            type = t.str;
-          };
-          provider = lib.mkOption {
-            type = t.str;
-          };
-          source = lib.mkOption {
-            type = t.enum [ "env" ];
-          };
-        }; }) (t.submodule { options = {
-          id = lib.mkOption {
-            type = t.str;
-          };
-          provider = lib.mkOption {
-            type = t.str;
-          };
-          source = lib.mkOption {
-            type = t.enum [ "file" ];
-          };
-        }; }) (t.submodule { options = {
-          id = lib.mkOption {
-            type = t.str;
-          };
-          provider = lib.mkOption {
-            type = t.str;
-          };
-          source = lib.mkOption {
-            type = t.enum [ "exec" ];
-          };
-        }; }) ]) ]);
-          default = null;
-        };
         cacheTtlMinutes = lib.mkOption {
           type = t.nullOr (t.number);
           default = null;
