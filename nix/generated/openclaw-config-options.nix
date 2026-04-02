@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 474409deb598c289ef707d479a9eece022dccc3b. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev e48ee8ae9e0ccd9133553c2337ca92a740b52780. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -7186,6 +7186,10 @@ in
         };
         maxResponseBytes = lib.mkOption {
           type = t.nullOr (t.int);
+          default = null;
+        };
+        provider = lib.mkOption {
+          type = t.nullOr (t.str);
           default = null;
         };
         readability = lib.mkOption {
