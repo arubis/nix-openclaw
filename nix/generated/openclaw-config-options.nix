@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev ab03d4e0372da700f6ee5aede7e414c020ba6dd1. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 6e2cbe3fafc509e1c49b552d9fd8fe2ae548a51c. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -5356,6 +5356,26 @@ in
           };
           output = lib.mkOption {
             type = t.nullOr (t.number);
+            default = null;
+          };
+          tieredPricing = lib.mkOption {
+            type = t.nullOr (t.listOf (t.submodule { options = {
+            cacheRead = lib.mkOption {
+              type = t.number;
+            };
+            cacheWrite = lib.mkOption {
+              type = t.number;
+            };
+            input = lib.mkOption {
+              type = t.number;
+            };
+            output = lib.mkOption {
+              type = t.number;
+            };
+            range = lib.mkOption {
+              type = t.oneOf [ (t.listOf (t.anything)) (t.listOf (t.anything)) ];
+            };
+          }; }));
             default = null;
           };
         }; });
