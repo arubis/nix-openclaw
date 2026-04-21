@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 6e2cbe3fafc509e1c49b552d9fd8fe2ae548a51c. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 5275d008ed33203dba3f98e969ad683a65c416c3. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -1458,6 +1458,40 @@ in
         };
         workspaceRoot = lib.mkOption {
           type = t.nullOr (t.str);
+          default = null;
+        };
+      }; });
+        default = null;
+      };
+      silentReply = lib.mkOption {
+        type = t.nullOr (t.submodule { options = {
+        direct = lib.mkOption {
+          type = t.nullOr (t.oneOf [ (t.enum [ "allow" ]) (t.enum [ "disallow" ]) ]);
+          default = null;
+        };
+        group = lib.mkOption {
+          type = t.nullOr (t.oneOf [ (t.enum [ "allow" ]) (t.enum [ "disallow" ]) ]);
+          default = null;
+        };
+        internal = lib.mkOption {
+          type = t.nullOr (t.oneOf [ (t.enum [ "allow" ]) (t.enum [ "disallow" ]) ]);
+          default = null;
+        };
+      }; });
+        default = null;
+      };
+      silentReplyRewrite = lib.mkOption {
+        type = t.nullOr (t.submodule { options = {
+        direct = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
+        group = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
+        internal = lib.mkOption {
+          type = t.nullOr (t.bool);
           default = null;
         };
       }; });
@@ -6665,6 +6699,46 @@ in
       default = null;
     };
   }; });
+    default = null;
+  };
+
+  surfaces = lib.mkOption {
+    type = t.nullOr (t.attrsOf (t.submodule { options = {
+    silentReply = lib.mkOption {
+      type = t.nullOr (t.submodule { options = {
+      direct = lib.mkOption {
+        type = t.nullOr (t.oneOf [ (t.enum [ "allow" ]) (t.enum [ "disallow" ]) ]);
+        default = null;
+      };
+      group = lib.mkOption {
+        type = t.nullOr (t.oneOf [ (t.enum [ "allow" ]) (t.enum [ "disallow" ]) ]);
+        default = null;
+      };
+      internal = lib.mkOption {
+        type = t.nullOr (t.oneOf [ (t.enum [ "allow" ]) (t.enum [ "disallow" ]) ]);
+        default = null;
+      };
+    }; });
+      default = null;
+    };
+    silentReplyRewrite = lib.mkOption {
+      type = t.nullOr (t.submodule { options = {
+      direct = lib.mkOption {
+        type = t.nullOr (t.bool);
+        default = null;
+      };
+      group = lib.mkOption {
+        type = t.nullOr (t.bool);
+        default = null;
+      };
+      internal = lib.mkOption {
+        type = t.nullOr (t.bool);
+        default = null;
+      };
+    }; });
+      default = null;
+    };
+  }; }));
     default = null;
   };
 
