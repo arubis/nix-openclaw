@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 55b297ef15db86139aedf1f000170517858fbb2c. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 81ca7bc40b09dbb6386fc5c1cecf237c5f11004a. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -188,6 +188,10 @@ in
         };
         jsonlDialect = lib.mkOption {
           type = t.nullOr (t.enum [ "claude-stream-json" ]);
+          default = null;
+        };
+        liveSession = lib.mkOption {
+          type = t.nullOr (t.enum [ "claude-stdio" ]);
           default = null;
         };
         maxPromptArgChars = lib.mkOption {
