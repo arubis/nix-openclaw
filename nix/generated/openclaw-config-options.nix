@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev ed0ffa472bfa4cff958f513c74c68ab8547085a6. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev c4dea587126d32ed4aa38fdbd0108cb6570264f4. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -5305,6 +5305,10 @@ in
         type = t.listOf (t.submodule { options = {
         api = lib.mkOption {
           type = t.nullOr (t.enum [ "openai-completions" "openai-responses" "openai-codex-responses" "anthropic-messages" "google-generative-ai" "github-copilot" "bedrock-converse-stream" "ollama" "azure-openai-responses" ]);
+          default = null;
+        };
+        baseUrl = lib.mkOption {
+          type = t.nullOr (t.str);
           default = null;
         };
         compat = lib.mkOption {
