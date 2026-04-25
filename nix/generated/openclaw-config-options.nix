@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 50e484b22e22cf71c9cf3354d1644d17cdffa29a. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 5a202f6f909daf37beb951252a80a27f280e4c31. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -3260,6 +3260,10 @@ in
         type = t.nullOr (t.oneOf [ (t.enum [ "openclaw" ]) (t.enum [ "clawd" ]) (t.enum [ "existing-session" ]) ]);
         default = null;
       };
+      headless = lib.mkOption {
+        type = t.nullOr (t.bool);
+        default = null;
+      };
       userDataDir = lib.mkOption {
         type = t.nullOr (t.str);
         default = null;
@@ -3586,6 +3590,35 @@ in
     };
     otel = lib.mkOption {
       type = t.nullOr (t.submodule { options = {
+      captureContent = lib.mkOption {
+        type = t.nullOr (t.oneOf [ (t.bool) (t.submodule { options = {
+        enabled = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
+        inputMessages = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
+        outputMessages = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
+        systemPrompt = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
+        toolInputs = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
+        toolOutputs = lib.mkOption {
+          type = t.nullOr (t.bool);
+          default = null;
+        };
+      }; }) ]);
+        default = null;
+      };
       enabled = lib.mkOption {
         type = t.nullOr (t.bool);
         default = null;
