@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 3d554aefdfa773b375df207f9663fcc4b01385f4. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 8fd3f4cef219549a246e3c1b165e25814964819a. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -3199,6 +3199,10 @@ in
 
   browser = lib.mkOption {
     type = t.nullOr (t.submodule { options = {
+    actionTimeoutMs = lib.mkOption {
+      type = t.nullOr (t.int);
+      default = null;
+    };
     attachOnly = lib.mkOption {
       type = t.nullOr (t.bool);
       default = null;
@@ -4731,6 +4735,10 @@ in
         default = null;
       };
     }; }));
+      default = null;
+    };
+    sessionIdleTtlMs = lib.mkOption {
+      type = t.nullOr (t.number);
       default = null;
     };
   }; });
