@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev f2745aa03ac9620dc488dc717d160ba0c78cb6b4. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 3d554aefdfa773b375df207f9663fcc4b01385f4. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -421,7 +421,7 @@ in
         default = null;
       };
       contextInjection = lib.mkOption {
-        type = t.nullOr (t.oneOf [ (t.enum [ "always" ]) (t.enum [ "continuation-skip" ]) ]);
+        type = t.nullOr (t.oneOf [ (t.enum [ "always" ]) (t.enum [ "continuation-skip" ]) (t.enum [ "never" ]) ]);
         default = null;
       };
       contextLimits = lib.mkOption {
@@ -4104,6 +4104,15 @@ in
       };
       denyCommands = lib.mkOption {
         type = t.nullOr (t.listOf (t.str));
+        default = null;
+      };
+      pairing = lib.mkOption {
+        type = t.nullOr (t.submodule { options = {
+        autoApproveCidrs = lib.mkOption {
+          type = t.nullOr (t.listOf (t.str));
+          default = null;
+        };
+      }; });
         default = null;
       };
     }; });
