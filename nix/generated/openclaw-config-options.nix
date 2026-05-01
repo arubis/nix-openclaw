@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 866be0baae463d65c4014b035fe306e27fbf57a6. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 47286e7349656a1887cb753841aee0db9b23b113. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -7,6 +7,32 @@ in
 {
   "$schema" = lib.mkOption {
     type = t.nullOr (t.str);
+    default = null;
+  };
+
+  accessGroups = lib.mkOption {
+    type = t.nullOr (t.attrsOf (t.oneOf [ (t.submodule { options = {
+    channelId = lib.mkOption {
+      type = t.str;
+    };
+    guildId = lib.mkOption {
+      type = t.str;
+    };
+    membership = lib.mkOption {
+      type = t.nullOr (t.enum [ "canViewChannel" ]);
+      default = null;
+    };
+    type = lib.mkOption {
+      type = t.enum [ "discord.channelAudience" ];
+    };
+  }; }) (t.submodule { options = {
+    members = lib.mkOption {
+      type = t.attrsOf (t.listOf (t.str));
+    };
+    type = lib.mkOption {
+      type = t.enum [ "message.senders" ];
+    };
+  }; }) ]));
     default = null;
   };
 
