@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 2244ba87b362088722a0dbe44f68562e906e83e2. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev bd83f8a844d85cbe5eda5db114e0210c841494c6. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -4378,6 +4378,10 @@ in
       };
       basePath = lib.mkOption {
         type = t.nullOr (t.str);
+        default = null;
+      };
+      chatMessageMaxWidth = lib.mkOption {
+        type = t.nullOr (t.anything);
         default = null;
       };
       dangerouslyAllowHostHeaderOriginFallback = lib.mkOption {
