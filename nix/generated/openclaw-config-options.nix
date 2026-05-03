@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 33017605678be69b5caec159e7522939143ab6ff. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev f66af6a5f552f0ffb8e16071aed8c8586246e239. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -12979,6 +12979,10 @@ in
         };
         timeoutSeconds = lib.mkOption {
           type = t.nullOr (t.int);
+          default = null;
+        };
+        useTrustedEnvProxy = lib.mkOption {
+          type = t.nullOr (t.bool);
           default = null;
         };
         userAgent = lib.mkOption {
