@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 83b14dc46eaca0e7b8d6eb9c50e1e610c8ca2843. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev c5488ea5774a4636fc50c47575ce122a317fc52b. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -1864,7 +1864,7 @@ in
           default = null;
         };
         visibleReplies = lib.mkOption {
-          type = t.nullOr (t.enum [ "automatic" "message_tool" ]);
+          type = t.nullOr (t.oneOf [ (t.enum [ "automatic" "message_tool" ]) (t.bool) ]);
           default = null;
         };
       }; });
@@ -5537,7 +5537,7 @@ in
         default = null;
       };
       visibleReplies = lib.mkOption {
-        type = t.nullOr (t.enum [ "automatic" "message_tool" ]);
+        type = t.nullOr (t.oneOf [ (t.enum [ "automatic" "message_tool" ]) (t.bool) ]);
         default = null;
       };
     }; });
@@ -5928,7 +5928,7 @@ in
       default = null;
     };
     visibleReplies = lib.mkOption {
-      type = t.nullOr (t.enum [ "automatic" "message_tool" ]);
+      type = t.nullOr (t.oneOf [ (t.enum [ "automatic" "message_tool" ]) (t.bool) ]);
       default = null;
     };
   }; });
