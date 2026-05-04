@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev d82992f0ae24b1d123a98387ae0de91a6128351d. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev edb697e389556537ac15315698329b3280337bb7. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -6893,6 +6893,10 @@ in
     type = t.nullOr (t.submodule { options = {
     allow = lib.mkOption {
       type = t.nullOr (t.listOf (t.str));
+      default = null;
+    };
+    bundledDiscovery = lib.mkOption {
+      type = t.nullOr (t.enum [ "compat" "allowlist" ]);
       default = null;
     };
     deny = lib.mkOption {
