@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev f66af6a5f552f0ffb8e16071aed8c8586246e239. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 0468ebe2008807db8369736664aeba5def81f07d. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -1747,6 +1747,10 @@ in
         type = t.nullOr (t.int);
         default = null;
       };
+      toolProgressDetail = lib.mkOption {
+        type = t.nullOr (t.oneOf [ (t.enum [ "explain" ]) (t.enum [ "raw" ]) ]);
+        default = null;
+      };
       typingIntervalSeconds = lib.mkOption {
         type = t.nullOr (t.int);
         default = null;
@@ -2814,6 +2818,10 @@ in
         type = t.nullOr (t.enum [ "off" "minimal" "low" "medium" "high" "xhigh" "adaptive" "max" ]);
         default = null;
       };
+      toolProgressDetail = lib.mkOption {
+        type = t.nullOr (t.enum [ "explain" "raw" ]);
+        default = null;
+      };
       tools = lib.mkOption {
         type = t.nullOr (t.submodule { options = {
         allow = lib.mkOption {
@@ -3253,6 +3261,10 @@ in
           default = null;
         };
       }; });
+        default = null;
+      };
+      verboseDefault = lib.mkOption {
+        type = t.nullOr (t.enum [ "off" "on" "full" ]);
         default = null;
       };
       workspace = lib.mkOption {
