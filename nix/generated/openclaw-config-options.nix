@@ -1,4 +1,4 @@
-# Generated from upstream OpenClaw schema at rev 931645e09043dd2eb685cec2ca370e41683d3808. DO NOT EDIT.
+# Generated from upstream OpenClaw schema at rev 981e32d05d3b3b420ef16473aed097a72787df82. DO NOT EDIT.
 # Generator: nix/scripts/generate-config-options.ts
 { lib }:
 let
@@ -6997,6 +6997,10 @@ in
     type = t.nullOr (t.submodule { options = {
     enabled = lib.mkOption {
       type = t.nullOr (t.bool);
+      default = null;
+    };
+    loopbackMode = lib.mkOption {
+      type = t.nullOr (t.enum [ "gateway-only" "proxy" "block" ]);
       default = null;
     };
     proxyUrl = lib.mkOption {
