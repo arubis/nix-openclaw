@@ -43,11 +43,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1782972695,
-        "narHash": "sha256-XKc16zuaAdvEiTmxNr1Dl2lYHkZCZWA2nKF7fxJkEv0=",
+        "lastModified": 1782988602,
+        "narHash": "sha256-pwLUWMXugATnbfrZxp7Iy6vxFh6eg3xkxjXmfhG9ETs=",
         "owner": "openclaw",
         "repo": "nix-steipete-tools",
-        "rev": "af792154a93e20f4557d2c41c5aa06e39a4aaff7",
+        "rev": "a1c121c664ca9e7c40f8054abbee74715243409c",
         "type": "github"
       },
       "original": {
